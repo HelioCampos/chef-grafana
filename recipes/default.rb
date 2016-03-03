@@ -17,10 +17,6 @@
 # limitations under the License.
 #
 
-unless node['grafana']['webserver'].empty?
-  include_recipe "grafana::_#{node['grafana']['webserver']}"
-end
-
 if node['grafana']['manage_install']
   include_recipe "grafana::_install_#{node['grafana']['install_type']}"
 end
